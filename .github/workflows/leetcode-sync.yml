@@ -1,9 +1,9 @@
 name: LeetCode Sync
 
 on:
-  workflow_dispatch: # Manual trigger
+  workflow_dispatch:
   schedule:
-    - cron: "0 8 * * *" # Daily at 8am UTC
+    - cron: "0 8 * * *" # daily 8am UTC
 
 jobs:
   sync:
@@ -15,7 +15,7 @@ jobs:
       - name: Sync from LeetCode
         uses: joshcai/leetcode-sync@v1.7
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          leetcode_session: ${{ secrets.LEETCODE_SESSION }}
-          csrf_token: ${{ secrets.CSRFTOKEN }}
-          destination_folder: problems
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
+          leetcode-csrf-token: ${{ secrets.CSRFTOKEN }}
+          destination-folder: problems
