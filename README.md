@@ -13,13 +13,4 @@ Every time I solve a problem on LeetCode, the solution is automatically updated 
 
 ---
 
-## ⚙️ Setup
-
-1. **Fork this repository**  
-   ```bash
-   git clone https://github.com/<your-username>/leetcode-sync.git
-   cd leetcode-sync
-
-   ---
-
 Special thanks to @3ba2ii for helping set up the LeetCode sync workflow.
