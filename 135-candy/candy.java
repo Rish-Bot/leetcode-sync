@@ -14,7 +14,7 @@ class Solution {
         // Right to left
         for (int i = n - 2; i >= 0; i--) {
             if (ratings[i] > ratings[i + 1]) {
-                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
+                candies[i] = Math.max(candies[i], candies[i + 1] + 1); // Do we need max here? - Dry run [1, 3, 4, 5, 2]
             }
         }
 
