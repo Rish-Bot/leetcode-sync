@@ -1,36 +1,28 @@
 class Solution {
     public int candy(int[] ratings) {
         int n = ratings.length;
-        int[] arr = new int[n];
+        int[] candies = new int[n];
+        Arrays.fill(candies, 1); 
 
-        // fill with min candy '1'
-        for (int i = 0; i < n; i++) {
-            arr[i] = 1;
-        }
-
-        //left to right
+        // Left to right
         for (int i = 1; i < n; i++) {
-            if (ratings[i] > ratings[i-1]) {
-                arr[i] = arr[i-1]+1;
+            if (ratings[i] > ratings[i - 1]) {
+                candies[i] = candies[i - 1] + 1;
             }
         }
 
-        //right to left 
-        for (int i = n-2; i >= 0; i--) {
-            if (ratings[i] > ratings[i+1]) {
-                arr[i] = Math.max(arr[i], arr[i+1]+1); // not to spoil the left transerve.
+        // Right to left
+        for (int i = n - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
             }
         }
 
-        // sum and out 
-
-        int ans = 0;
-
-        for (int i : arr) {
-            ans+=i;
+        // Sum up all candies
+        int total = 0;
+        for (int c : candies) {
+            total += c;
         }
-
-        return ans;
-        
+        return total;
     }
 }
