@@ -25,6 +25,6 @@ class Solution {
             helper(res, root.left);
             res.add(root.val);
             helper(res, root.right);
-        }
+        } 
     }
 }
