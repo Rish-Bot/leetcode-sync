@@ -21,10 +21,12 @@ class Solution {
     }
 
     public void helper(List<Integer> res, TreeNode node) {
-        if (node != null) {
+        if (node == null) {
+            return;
+        }
             helper(res, node.left);
             helper(res, node.right);
             res.add(node.val);
-        }
+       
     }
 }
