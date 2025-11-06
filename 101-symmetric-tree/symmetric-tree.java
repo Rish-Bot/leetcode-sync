@@ -15,12 +15,16 @@
  */
 class Solution {
     public boolean isSymmetric(TreeNode root) {
-        return isMirror(root.left, root.right);
+        if(root == null) return true; // empty tree is symmetry
+
+        return symmetry(root.left, root.right);
     }
 
-    public boolean isMirror(TreeNode r1, TreeNode r2) {
-        if (r1 == null && r2 == null) return true;
-        if (r1 == null || r2 == null) return false;
-        return r1.val == r2.val && isMirror(r1.left, r2.right) && isMirror(r1.right, r2.left);
+    boolean symmetry(TreeNode l, TreeNode r) {
+        if (l == r) return true; //null case (both)
+        if(l == null || r == null) return false;
+        if(l.val != r.val) return false;
+
+        return symmetry(l.left, r.right) && symmetry(l.right, r.left);
     }
 }
