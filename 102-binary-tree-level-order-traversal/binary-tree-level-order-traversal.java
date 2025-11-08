@@ -15,16 +15,17 @@
  */
 class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
+        //bfs approach.
         List<List<Integer>> out = new ArrayList<>();
-
         if (root == null) return out;
 
-        Queue<TreeNode> q = new LinkedList<>();
+        Queue<TreeNode> q = new ArrayDeque<>();
         q.add(root);
 
         while(!q.isEmpty()) {
-            List<Integer> level = new ArrayList<>();
             int sz = q.size();
+            List<Integer> level = new ArrayList<>(sz);
+            
 
             for (int i = 0; i < sz; i++) { //number of iteration as per level
                 TreeNode node = q.poll();
