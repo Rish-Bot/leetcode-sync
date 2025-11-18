@@ -13,6 +13,7 @@
  *     }
  * }
  */
+ 
 class Solution {
     public int sumOfLeftLeaves(TreeNode root) {
         if(root == null) return 0;    
@@ -20,10 +21,11 @@ class Solution {
     }
 
     int dfs(TreeNode node, boolean isLeft) {
-        if(node == null) return 0;
-        if(node.left == node.right && isLeft) 
-            return node.val;
-        return dfs(node.left, true) + dfs(node.right, false); //addition happens on the return
-        
+      if(node == null) return 0;
+      if(node.left == null && node.right == null && isLeft) {
+        return node.val;
+      }
+
+      return dfs(node.left, true) + dfs(node.right, false); // can be added here
     }
 }
