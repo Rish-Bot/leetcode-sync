@@ -13,7 +13,7 @@
  *     }
  * }
  */
- // Level order traversal, average, fix it there
+
 class Solution {
     public List<Double> averageOfLevels(TreeNode root) {
 
