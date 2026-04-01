@@ -11,8 +11,7 @@ class Solution {
         
     }
 
- public void combos(int i, int currSum, int[] array, int target,
-                       List<Integer> curr, List<List<Integer>> ans) {
+ public void combos(int i, int currSum, int[] array, int target, List<Integer> curr,List<List<Integer>> ans) {
         if (currSum == target) {
             ans.add(new ArrayList<>(curr));
             return;
